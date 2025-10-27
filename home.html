@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cinescope - Search</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <link rel="icon" type="image/png" href="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png">
+  <style>
+    body {
+      font-family: 'Lato' , sans-serif;
+      color: black(253, 245, 245);
+      height: 100vh;
+;
+    }
+
+    .search-section {
+      height: calc(80vh - 80px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .search-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(118, 13, 13, 0.5);;
+    }
+
+    .search-box input {
+      padding: 10px;
+      background-color: rgb(255, 255, 255); 
+      width: 300px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    .search-box button {
+      padding: 10px 20px;
+      background: rgb(169, 0, 0);
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      color: white;
+      font-family: "Lato", sans-serif;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body class="search-page">
+
+ <header>
+        <img class="logo" src="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png" alt="logo" width="50" height="50" >
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/home.html"><button>Home</button></a></li>
+                <li><a href="/moives.html"><button>Movies</button></a></li>
+                <li><a href="/must_watch.html"><button>Must Watch</button> </a></li>
+                <li><a href="/rew.html"><button>Give Your Rating</button> </a></li>
+
+            </ul>
+        </nav>
+    </header>
+  
+  <div class="search-section">
+    <div class="search-box">
+      <h1>🍿Search for a Movie</h1>
+      <input type="text" id="searchInput" placeholder="Enter movie name...">
+      <button onclick="searchMovie()">Search</button>
+    </div>
+  </div>
+
+  <script>
+    function searchMovie() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (query !== "") {
+        window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+      }
+    }
+  </script>
+
+  <footer>
+        <p class="footer_1">&copy; 2025 Cinescope. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

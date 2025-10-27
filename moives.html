@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cinescope - Movie List</title>
+  <link rel="icon" type="image/png" href="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png">
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      color: white;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .movie-grid {
+      display: flex;
+      flex-wrap: wrap; 
+      gap: 35px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    
+
+    .movie-title {
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+
+    .stars {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png" alt="logo" width="50" height="50" >
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/home.html"><button>Home</button></a></li>
+                <li><a href="/moives.html"><button>Movies</button></a></li>
+                <li><a href="/must_watch.html"><button>Must Watch</button> </a></li>
+                <li><a href="/rew.html"><button>Give Your Rating</button> </a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+  <h1> 🍿 Cinescope  Movie Ratings</h1>
+  <div class="movie-grid" id="movieGrid"></div>
+
+  <script>
+    const apiKey = 'fe6f38433bd591b357f18141a8e2b841'; // Replace with your key
+    const movieGrid = document.getElementById('movieGrid');
+
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`)
+      .then(response => response.json())
+      .then(data => {
+        data.results.forEach(movie => {
+          const poster = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+          const stars = "★".repeat(Math.round(movie.vote_average / 2)) + "☆".repeat(5 - Math.round(movie.vote_average / 2));
+
+          const card = document.createElement('div');
+          card.className = 'movie-card';
+          card.innerHTML = `
+            <img src="${poster}" alt="${movie.title}">
+            <div class="movie-title">${movie.title}</div>
+            <div class="stars">${stars}</div>
+          `;
+          movieGrid.appendChild(card);
+        });
+      });
+  </script>
+<footer>
+        <p class="footer_1">&copy; 2025 Cinescope. All rights reserved.</p>
+</footer>
+</body>
+</html>

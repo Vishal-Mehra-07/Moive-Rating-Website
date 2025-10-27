@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    font-family: "Lato", sans-serif;
+
+}
+
+body.search-page {
+  background-image: url('images/bg.jpg'); /* path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+li, a, button {
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo{
+    cursor: pointer; 
+    margin-right: auto;
+}
+
+.nav_links {
+    display:flex ;
+    padding: 0px 20px;
+    gap: 20px;
+   
+
+}
+
+.nav_links {
+    list-style: none;
+}
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: white;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid red;
+    padding: 9px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    transition: color 0.3s ease-in-out;
+}   
+
+button:hover {
+    background-color: rgb(214, 11, 11);
+}
+main {
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  background-color: black;
+}
+
+.movie-card {
+  background-color: #000000;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 180px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 10px rgb(224, 8, 8);
+  transition: transform 0.3s;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 235px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.stars {
+  color: gold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.rating-number {
+  color: rgb(255, 252, 252);
+  font-size: 14px;
+  font-weight: bold;
+  ;
+}
+
+.footer_1 {
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-container {
+  display: flex-wrap;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+/* --- Review Cards & Submit Form --- */
+.review-submit-card {
+    background-color: rgba(0,0,0,0.97);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(224, 8, 8);
+    padding: 32px 28px;
+    margin-bottom: 38px;
+    width: 100%;
+    max-width: 750px;
+    margin-top: 30px;
+    margin-left: auto; 
+    margin-right: auto;
+    
+}
+
+.review-submit-card h1, .submitted-reviews-card h2 {
+    text-align:center;
+    font-weight: bold;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+#reviewForm {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    
+}
+#reviewForm label {
+    font-weight: 600;
+    font-size: 16px;
+}
+#reviewForm input, #reviewForm textarea {
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px 13px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+#reviewForm input:focus, #reviewForm textarea:focus {
+    outline: none;
+    border: 1.5px solid #ee1717;
+    box-shadow: 0 0 5px rgb(224, 8, 8);
+}
+#reviewForm button {
+    margin-top: 7px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 11px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+#reviewForm button:hover {
+    background: rgb(224, 8, 8);
+}
+
+#reviews {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.review-card {
+    background: #000000;
+    display: flex;
+    gap: 18px;
+    border-radius: 11px;
+    box-shadow: 0 2px 8px rgba(214,8,8,0.18);
+    padding: 15px;
+    align-items: flex-start;
+    border: 1px solid #6d0000;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.review-card:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(214,8,8,0.29);
+}
+.review-card img {
+    width: 96px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #292828;
+    flex-shrink: 0;
+}
+.review-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.review-content h3 {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 3px 0;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.stars {
+    color: gold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: "Arial Unicode MS", Arial, sans-serif;
+}
+.rating-number {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 600;
+}
+.comment {
+    font-style: italic;
+    color: #efefef;
+    font-size: 15px;
+}
+
+@media (max-width: 750px) {
+    .card { max-width:96vw; padding:20px 4vw;}
+    .review-card { flex-direction: column; align-items:center;}
+    .review-card img { width:70vw; max-width:170px; height:auto;}
+}
+/* --- End of Review Cards & Submit Form --- */

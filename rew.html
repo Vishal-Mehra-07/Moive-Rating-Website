@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinescope - Movie Reviews</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <header>
+        <img class="logo" src="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png" alt="logo" width="50" height="50" >
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/home.html"><button>Home</button></a></li>
+                <li><a href="/moives.html"><button>Movies</button></a></li>
+                <li><a href="/must_watch.html"><button>Must Watch</button> </a></li>
+                <li><a href="/rew.html"><button>Give Your Rating</button> </a></li>
+
+            </ul>
+        </nav>
+    </header>
+</head>
+<body class="search-page">
+<main>
+
+    
+    <div class="review-page-container">
+        <h1 style="color: white; text-align: center;">🍿 Submit a Movie Review</h1>
+        <!-- Review Submission Card -->
+        <div class="review-submit-card">
+            
+            <form id="reviewForm">
+                <label for="movieName" style="color: white;">Movie Name:</label>
+                <input type="text" id="movieName" required placeholder="e.g. Interstellar">
+                <label for="rating" style="color: white;">Rate out of 5</label>
+                <input type="number" id="rating" min="1" max="5" required placeholder="5">
+                <label for="comment" style="color: white;">Your Review</label>
+                <textarea id="comment" required placeholder="Tell us about the movie"></textarea>
+                <button>Submit</button> 
+            </form>
+        </div>
+        <!-- All Submitted Reviews Card -->
+        <div class="card submitted-reviews-card">
+            <h2 style="color: white;">Submitted Reviews</h2>
+            <div id="reviews"></div>
+        </div>
+    </div>
+</main>
+<script src="rev.js"></script>
+</body>
+</html>

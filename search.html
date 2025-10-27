@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Result</title>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="icon" type="image/png" href="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png">
+  <header>
+        <img class="logo" src="/img/ChatGPT Image Jun 20, 2025, 09_06_39 PM.png" alt="logo" width="50" height="50" >
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/home.html"><button>Home</button></a></li>
+                <li><a href="/moives.html"><button>Movies</button></a></li>
+                <li><a href="/must_watch.html"><button>Must Watch</button> </a></li>
+                <li><a href="/rew.html"><button>Give Your Rating</button> </a></li>
+
+            </ul>
+        </nav>
+    </header>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+      
+    }
+
+    .movie-card {
+      
+      margin: auto;
+      max-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      ;
+      
+    }
+
+    .movie-card img {
+      width: 100%;
+    }
+
+    .stars {
+      color: gold;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🔎 Search Result</h1>
+  <div class="movie-card" id="movieCard">Loading...</div>
+
+  <script>
+    const apiKey = 'fe6f38433bd591b357f18141a8e2b841'; 
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieName = urlParams.get('query');
+
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${movieName}`)
+      .then(res => res.json())
+      .then(data => {
+        const movie = data.results[0]; 
+        const card = document.getElementById('movieCard');
+
+        if (!movie) {
+          card.innerHTML = `<p>Movie not found!</p>`;
+          return;
+        }
+
+        const poster = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        const stars = "★".repeat(Math.round(movie.vote_average / 2)) + "☆".repeat(5 - Math.round(movie.vote_average / 2));
+
+        card.innerHTML = `
+          <img src="${poster}" alt="${movie.title}">
+          <h2>${movie.title}</h2>
+          <p>${movie.overview}</p>
+          <p class="stars">${stars}</p>
+        `;
+      });
+  </script>
+  <footer>
+        <p class="footer_1">&copy; 2025 Cinescope. All rights reserved.</p>
+</footer>
+</body>
+</html>
