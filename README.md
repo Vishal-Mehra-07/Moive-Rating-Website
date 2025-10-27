@@ -51,7 +51,7 @@ const API_KEY = "";
   <h2>🚀 Getting Started</h2>
   <ol>
     <li><strong>Clone this repository:</strong>
-      <pre><code>git clone https://github.com/Vishal-Mehra-07/cinescope.git</code></pre>
+      <pre><code>git clone https://github.com/Vishal-Mehra-07/Moive-Rating-Website.git</code></pre>
     </li>
     <li><strong>Open <code>home.html</code></strong> in your browser.</li>
     <li><strong>Replace API key:</strong>  
