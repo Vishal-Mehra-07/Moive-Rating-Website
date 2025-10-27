@@ -1,5 +1,5 @@
 // --- API Configuration ---
-const API_KEY = 'fe6f38433bd591b357f18141a8e2b841'; // Replace with your API key
+const API_KEY = '   '; // Replace with your API key
 const API_URL = 'https://api.themoviedb.org/3/search/movie';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -92,3 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('reviews').appendChild(div);
     }
 });
+
